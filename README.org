@@ -1,0 +1,12 @@
+* Overview
+
+  Just playing around with TypeScript.
+
+* Build
+
+  Just run =tsc= in the project root. It should compile, then enter "watch" mode.
+
+* Run
+
+  Load =greeter.html= in your browser.
+  
