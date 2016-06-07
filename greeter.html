@@ -4,35 +4,61 @@
       <title>TypeScript Play</title>
 
       <style type="text/css">
-table.centered
+.centered
 {
    margin-left: auto;
    margin-right: auto;
+   text-align: center;
+}
+.bg-blue
+{
+    background: #cdf;
+}
+.bg-red
+{
+    background: #fcc;
 }
       </style>
 
-      <!-- <script text="text/javascript" src="require.js"></script> -->
+      <script type="text/javascript">
+         function _dummy() 
+      {
+      }
 
-      <!-- <script type="text/javascript" src="Person.js"></script>
-           <script type="text/javascript" src="Employee.js"></script> -->
+function button_2_click()
+{
+   console.log( "button_2_click()");
+}
 
-      <!-- <script type="text/javascript" src="greeter.js"></script> -->
-
-      <!-- <script type="text/javascript" src="play.js"></script> -->
-
-      <script type="text/javascript" src="bundle.js"></script>
+function _loaded()
+{
+   loaded();
+}
+      </script>   
 
     </head>
-    <body>
+    <body onload="_loaded()">
       <h1>TypeScript Play</h1>
-        <!-- <script src="greeter.js"></script> -->
       <p/>
       
       <form>
         <table class="centered">
           <tr><td>R1C1</td><td>R1C2</td></tr>
           <tr><td>R2C1</td><td>R2C2</td></tr>
+          <tr>
+            <td><button id="button1" type="button" onclick="button_1_click()">Button 1</button></td>
+            <td><button id="button2" type="button" onclick="button_2_click()">Button 2</button></td>
+          </tr>
         </table>
+
+        <p/>
+
+        <div id="msgDiv" class="centered bg-blue"
+             style="border: 1px solid black; padding: 0.5em;">
+          Hi
+        </div>
+
       </form>
+      <script type="text/javascript" src="bundle.js"></script>
     </body>
 </html>

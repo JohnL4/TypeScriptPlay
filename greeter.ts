@@ -41,6 +41,48 @@ function hash( x): number
    return retval;
 }
 
+// -------------------------------------------------  button_1_click  --------------------------------------------------
+
+function button_1_click()
+{
+   let msgDiv = document.getElementById("msgDiv");
+   if (msgDiv == null)
+   {
+      console.log( "Attempt to find msgDiv failed.");
+      return;
+   }
+   console.log( `Got msgDiv, classList length = ${msgDiv.classList.length}`);
+   for (let i = 0; i < msgDiv.classList.length; i++)
+   {
+      console.log( `    i = ${i}`);
+      if (msgDiv.classList[i] == "bg-blue")
+      {
+         console.log( `    switch to red`);
+         msgDiv.classList[i] = "bg-red";
+         break;
+      }
+      else if (msgDiv.classList[i] == "bg-red")
+      {
+         console.log( `    switch to blue`);
+         msgDiv.classList[i] = "bg-blue";
+         break;
+      }
+   }
+}
+
+function loaded()
+{
+   console.log( "loaded");
+   let btn1 = document.getElementById( "button1");
+   if (btn1 == null)
+      console.log( "Couldn't find butotn 1");
+   else
+   {
+      console.log( "Found button 1");
+      btn1.onclick = button_1_click;
+   }
+}
+
 // ----------------------------------------------------  main code  ----------------------------------------------------
 
 console.log( `hash(7): ${hash(7)}`);
