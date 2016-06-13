@@ -24,6 +24,9 @@ button.press-me
 }
       </style>
 
+      <script type="text/javascript" src="./require.js"></script>
+      <!-- main.js built with: browserify -o main.js greeter.js -->
+      <script type="text/javascript" src="./main.js"></script>
       <script type="text/javascript">
          function _dummy() 
       {
@@ -37,12 +40,13 @@ button.press-me
 
 function _loaded()
 {
-   loaded();
+   console.log( "_loaded()");
+   // loaded();
 }
       </script>   
 
     </head>
-    <body>
+    <body onload="_loaded()">
       <h1>TypeScript Play</h1>
       <p/>
       
@@ -64,6 +68,10 @@ function _loaded()
         </div>
 
       </form>
+      <script type="text/javascript" src="./main.js"></script>
+      <!-- Definitions in main.js are not available at button-click time, so we load another file that contains
+           DUPLICATE DEFINITIONS of the given functions. Be aware of this if you edit functions not in simple.ts.
+      -->
       <script type="text/javascript" src="app/simple.js"></script>
     </body>
 </html>
